@@ -1,19 +1,19 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const TrevelSchema = new Schema({
-    harga: {
+const MapalaSchema = new Schema({
+    hargapendaftaran: {
       type: Number
     },
-    tujuan: {
+    bataspendaftaran: {
       type: String,
 
     },
-    typemobil: {
+    namalengkap: {
       type: String
     },
 
-    TGLkeberangkatan: {
+    divisi: {
       type: String
     },
     rating: {
@@ -28,4 +28,4 @@ const TrevelSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('trevel', TrevelSchema)
+module.exports = mongoose.model('mapala', MapalaSchema)

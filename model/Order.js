@@ -6,10 +6,10 @@ const OrderSchema = new Schema({
   idUser: {
     type: objectId
   },
-  idtrevel: {
+  idmapala: {
     type: objectId
   },
-    harga: {
+    hargapendaftaran: {
       type: Number
     },
     jumlah: {

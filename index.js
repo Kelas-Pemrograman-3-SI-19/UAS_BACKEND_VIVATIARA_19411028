@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
 
-const mongoURL = 'mongodb://localhost:27017/trevelapp'
+const mongoURL = 'mongodb://localhost:27017/mapalaapp'
 
 mongoose.connect(mongoURL, {
   useCreateIndex: true,
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({
 // routes
 
 app.use('/user', require('./routes/user'))
-app.use('/trevel', require('./routes/Trevel'))
+app.use('/mapala', require('./routes/Mapala'))
 app.use('/order', require('./routes/order'))
 
 app.listen(5000, () => {

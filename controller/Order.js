@@ -18,10 +18,10 @@ exports.getAllOrder = () =>
     orderModel.aggregate([
       {
         $lookup: {
-          from: "trevels",
-          localField: "idTrevel",
+          from: "mapalas",
+          localField: "idMapala",
           foreignField: "_id",
-          as: "dataTrevel"
+          as: "dataMapala"
         }
       },
       {
@@ -47,10 +47,10 @@ exports.getAllOrder = () =>
         },
         {
           $lookup: {
-            from: "trevels",
-            localField: "idTrevel",
+            from: "mapalas",
+            localField: "idMapala",
             foreignField: "_id",
-            as: "dataTrevel"
+            as: "dataMapala"
           }
         }
       ]).then(res => {

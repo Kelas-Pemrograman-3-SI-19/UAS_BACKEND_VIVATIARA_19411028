@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const trevelController = require('../controller/Trevel')
+const mapalaController = require('../controller/Mapala')
 const uploadSetting = require('../uploadConfig')
 const fields = uploadSetting.upload.fields([
   {
@@ -15,19 +15,19 @@ router.post('/insert', fields, (req, res) => {
     image: imageName
   })
 
-  trevelController.insertTrevel(data)
+  mapalaController.insertMapala(data)
     .then((result) => res.json(result))
     .catch((err) => res.json(err))
 })
 
 router.get('/getall', (req, res) => {
-  trevelController.getAllTrevel()
+  mapalaController.getAllmapala()
     .then(result => res.json(result))
     .catch(err => res.json(err))
 })
 
 router.get('/getbyid/:id', (req, res) => {
-  trevelController.getById(req.params.id)
+  mapalaController.getById(req.params.id)
     .then(result => res.json(result))
     .catch(err => res.json(err))
 })
@@ -45,13 +45,13 @@ router.put('/edit/:id', fields,(req, res) => {
     })
   }
 
-  trevelController.edit(data, req.params.id, changeImage)
+  mapalaController.edit(data, req.params.id, changeImage)
     .then(result => res.json(result))
     .catch(err => res.json(err))
 })
 
 router.delete('/delete/:id', (req, res) => {
-  trevelController.delete(req.params.id)
+  mapalaController.delete(req.params.id)
     .then(result => res.json(result))
     .catch(err => res.json(err))
 })
